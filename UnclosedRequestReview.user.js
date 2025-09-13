@@ -1701,7 +1701,7 @@
             }
             node.appendChild(link);
             //Place the request-info prior to the .flash.
-            message.insertBefore(node, message.querySelector('.flash'));
+            message.querySelector('.flash').before(node);
         }
         //The link is now inserted in the request info.
         //Add post data to the DOM to enable other functionality.
@@ -2484,14 +2484,7 @@
         if (!message) {
             return null;
         }
-        var child = message.firstChild;
-        while (child) {
-            if (child.classList && child.classList.contains('content')) {
-                return child;
-            }
-            child = child.nextSibling;
-        }
-        return null;
+        return message.querySelector(".content");
     };
 
     funcs.getRequestInfoFromMessage = (message) => { // eslint-disable-line arrow-body-style
