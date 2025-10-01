@@ -2041,7 +2041,7 @@
                 tagsInTextContentRegExes[type].lastIndex = 0;
             });
         }
-        [].slice.call(document.querySelectorAll('.message > .request-info')).forEach((requestInfo) => {
+        [].slice.call(document.querySelectorAll('.message > .message-info-container > .request-info')).forEach((requestInfo) => {
             //There is only ever one request-info per message
             //XXX This is currently not going to handle duplicate requests where the duplicate-target is also included.
             //XXX No attempt is made to detect request tags in text.
